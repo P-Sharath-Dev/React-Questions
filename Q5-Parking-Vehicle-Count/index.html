@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>React App</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // Create handlers to increase and decrease vehicle count here
+      let carValue = 0;
+      let bikeValue = 0;
+      let scootyValue = 0;
+      let bicycleValue = 0;
+      function increase(vehicle) {
+        switch (vehicle) {
+          case "car":
+            carValue += 1;
+            break;
+          case "bike":
+            bikeValue += 1;
+            break;
+          case "scooty":
+            scootyValue += 1;
+            break;
+          case "bicycle":
+            bicycleValue += 1;
+            break;
+        }
+        rootElement.render(<App />);
+      }
+
+      function decrease(vehicle) {
+        switch (vehicle) {
+          case "car":
+            if (carValue > 0) {
+              carValue -= 1;
+            }
+            break;
+          case "bike":
+            if (bikeValue > 0) {
+              bikeValue -= 1;
+            }
+            break;
+          case "scooty":
+            if (scootyValue > 0) {
+              scootyValue -= 1;
+            }
+            break;
+          case "bicycle":
+            if (bicycleValue > 0) {
+              bicycleValue -= 1;
+            }
+            break;
+        }
+        rootElement.render(<App />);
+      }
+
+      const App = () => (
+        <>
+          <p>List of all the vehicles count in the parking.</p>
+          <ol>
+            <li>
+              <p>
+                <b>Car: {carValue}</b> &emsp;
+                {/* Add increase and decrease count buttons here */}
+                <button
+                  onClick={() => {
+                    increase("car");
+                  }}
+                >
+                  increase
+                </button>
+                &nbsp;
+                <button
+                  onClick={() => {
+                    decrease("car");
+                  }}
+                >
+                  decrease
+                </button>
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Bike: {bikeValue}</b> &emsp;
+                {/* Add increase and decrease count buttons here */}
+                <button
+                  onClick={() => {
+                    increase("bike");
+                  }}
+                >
+                  increase
+                </button>
+                &nbsp;
+                <button
+                  onClick={() => {
+                    decrease("bike");
+                  }}
+                >
+                  decrease
+                </button>
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Scooty: {scootyValue}</b> &emsp;
+                {/* Add increase and decrease count buttons here */}
+                <button
+                  onClick={() => {
+                    increase("scooty");
+                  }}
+                >
+                  increase
+                </button>
+                &nbsp;
+                <button
+                  onClick={() => {
+                    decrease("scooty");
+                  }}
+                >
+                  decrease
+                </button>
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Bicycle: {bicycleValue}</b> &emsp;
+                {/* Add increase and decrease count buttons here */}
+                <button
+                  onClick={() => {
+                    increase("bicycle");
+                  }}
+                >
+                  increase
+                </button>
+                &nbsp;
+                <button
+                  onClick={() => {
+                    decrease("bicycle");
+                  }}
+                >
+                  decrease
+                </button>
+              </p>
+            </li>
+          </ol>
+        </>
+      );
+
+      const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      rootElement.render(<App />);
+    </script>
+  </body>
+</html>
