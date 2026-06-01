@@ -1,0 +1,38 @@
+/* Write code for your CSS here */
+body {
+  background-color: #eeeeee;
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  padding: 60px 80px;
+}
+
+p {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 50px 0;
+}
+
+li {
+  display: inline-block;
+  background-color: #19d3e6;
+  padding: 15px 20px;
+  margin-right: 30px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+strong {
+  font-size: 22px;
+}
+
+.about {
+  max-width: 700px;
+  line-height: 1.4;
+}
